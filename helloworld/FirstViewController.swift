@@ -11,7 +11,7 @@ import UIKit
 
 class FirstViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet var textLbl: UITextField!
+//    @IBOutlet var textLbl: UITextField!
     @IBOutlet var pointLbl: UILabel!
     
     var points = 0
@@ -67,9 +67,14 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
         
         if sender == btn_nopts {
             println("No points for you")
+            points--
         } else {
             println("Points for you")
+            points++
         }
+        
+        pointLbl.text = String(points)
+        
     }
     
     @IBOutlet var btn_nopts:UIButton!
